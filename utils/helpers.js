@@ -25,7 +25,7 @@ const fileValidate = async (path) => {
   if (!supportedFileTypes.includes(fileType)) {
     throw new Error('Unsupported file type');
   }
-  return fileType;
+  return;
 };
 
 const getNumberOfSheets = (userInput) => {
