@@ -6,7 +6,7 @@ const setKeyValuePair = (obj, oldKey, newKey) => {
   return finalKeyValue;
 };
 
-const createOutputObject = (obj) => {
+const createOutputObject = (obj, id) => {
   const socials = {
     ...setKeyValuePair(obj, 'S', 'facebook'),
     ...setKeyValuePair(obj, 'T', 'googlepus'),
@@ -39,7 +39,7 @@ const createOutputObject = (obj) => {
     ...setKeyValuePair(obj, 'ZZ', 'lead'),
   };
   const finalObject = {
-    id: 1,
+    id,
     ...setKeyValuePair(obj, 'A', 'category'),
     ...(Object.keys(contentChildrenCount).length > 0 && {
       contentChildrenCount,
@@ -56,8 +56,8 @@ const createOutputObject = (obj) => {
 
 const outputFormatter = (inputArr) => {
   const outputArr = [];
-  inputArr.forEach((element) => {
-    outputArr.push(createOutputObject(element));
+  inputArr.forEach((element, index) => {
+    outputArr.push(createOutputObject(element, index));
   });
   return outputArr;
 };
