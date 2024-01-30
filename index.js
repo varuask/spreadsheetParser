@@ -15,7 +15,6 @@ const main = async () => {
       const jsonEntity = JSON.stringify(element);
       writeStream.write(jsonEntity + '\n');
     });
-    console.log(outputData[0]);
   } catch (err) {
     console.log(`app terminated because of this problem -> ${err.message}`);
   }
